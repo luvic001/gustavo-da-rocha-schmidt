@@ -1,0 +1,160 @@
+body
+  background-color: $cinza
+  main.site-main,
+  main.menu-mobile,
+  header
+    max-width: 1680px
+  header
+    left: 0
+    right: 0
+    margin: auto
+  main.site-main
+    margin: 0 auto
+    display: block
+    position: relative
+  .site-sections
+    padding: 92px 0
+    background-color: $branco
+    &.gray-sections
+      background-color: $cinza-fundo
+    .section-title
+      color: $ciano
+      +font-size(32px)
+      font-weight: 500
+      +breakpoint(md)
+        +font-size(42px)
+      strong
+        font-weight: 500
+    .section-subtitle
+      +font-size(24px)
+      color: $ciano
+      font-weight: 400
+      margin-bottom: 30px
+      span
+        color: #333
+    .content-body
+      padding-left: 0
+      +breakpoint(md)
+        padding-left: 1.5rem
+    p
+      +font-size(16px)
+      line-height: 24px
+      +breakpoint(md)
+        +font-size(18px)
+        line-height: 26px
+    h1, h2, h3, h4, h5, h6
+      color: $ciano
+      font-weight: 700
+    p, h2
+      margin-bottom: 20px
+      +breakpoint(md)
+        margin-bottom: 30px
+    .about-image
+      position: relative
+      margin-bottom: 20px
+      &:hover
+        figure
+          img
+            +filter(brightness(1.15))
+        .box-image
+          width: 100%
+          +breakpoint(sm)
+            width: 100px
+            height: 100%
+      +breakpoint(sm)
+        margin-bottom: 0
+      figure
+        position: relative
+        display: flex
+        z-index: 2
+        img
+          +default_transition()
+      .box-image
+        +default_transition()
+        z-index: 0
+        display: inline-block
+        background-color: $ciano
+        position: absolute
+        bottom: -5px
+        margin: auto
+        width: 80%
+        left: 0
+        right: 0
+        height: 100%
+        +breakpoint(sm)
+          left: initial
+          width: 100px
+          right: -5px
+          top: 0
+          bottom: 0
+          height: 250px
+        +breakpoint(md)
+          height: 300px
+        +breakpoint(lg)
+          width: 385px
+          height: 385px
+          right: -2px
+    &.hidden-section
+      padding: 0
+      background-color: $transparent
+      &.expanded
+        .expand-section
+          a
+            +transform(rotate(0deg))
+            &:after
+              content: '-' !important
+              color: $branco
+              font-weight: 700
+          span
+            display: none
+
+      .expand-section
+        margin: -20px 0px
+        position: relative
+        cursor: pointer
+        a
+          width: 40px
+          height: 40px
+          background-color: $ciano
+          display: flex
+          align-items: center
+          justify-content: center
+          margin: 0 auto
+          position: relative
+          +transform(rotate(45deg))
+          +default_transition()
+          &:hover
+            text-decoration: none
+        span
+          position: absolute
+          width: 100%
+          right: 0
+          left: -.3px
+          margin: auto
+          text-align: center
+          top: 5px
+          +breakpoint(sm)
+            top: 1.5px
+          &:after
+            content: '+'
+            color: $branco
+            +font-size(30px)
+      .content
+        background-color: #d4d4d4
+        padding: 40px 0
+        border-bottom: 1px solid #b3b3b3
+        display: none
+        article
+          margin-bottom: 25px
+          +breakpoint(md)
+            border-right: 2px solid #878787
+            padding-left: 25px
+          &:last-child
+            border-right: 0
+          h4
+            +font-size(22px)
+            font-weight: 500
+          p
+            +font-size(15px)
+            margin-bottom: 0
+            line-height: 22px

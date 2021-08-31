@@ -1,0 +1,109 @@
+body.modal-especialidades-open
+  .especialidades-main
+    +opacity(1)
+    pointer-events: all
+
+.especialidades-main,
+.especialidades-main .glass
+  position: fixed
+  width: 100vw
+  height: 100vh
+  top: 0
+  left: 0
+  z-index: 800
+.especialidades-main
+  overflow-y: auto
+  overflow-x: hidden
+  pointer-events: none
+  +opacity(0)
+  +default_transition()
+  transition-delay: .6s
+  .glass
+    background-color: rgba(#333, .8)
+    z-index: 0
+  .content
+    z-index: 1
+    position: relative
+    background-color: $branco
+    max-width: 965px
+    min-height: 100%
+    display: block
+    margin: 0 auto
+    +breakpoint(sm)
+      margin: 1rem auto
+    .head
+      align-items: center
+      padding: 0 1rem
+      justify-content: space-between
+      display: flex
+      +breakpoint(sm)
+        padding: 0 1rem 0 2rem
+      .close-button
+        +font-size(55px)
+        color: $ciano
+        &:hover
+          text-decoration: none
+      .carousel-pagination
+        display: block
+        a
+          display: inline-block
+          position: relative
+          height: auto
+          margin-right: 2rem
+          width: auto
+          +opacity(1)
+          +breakpoint(sm)
+            display: none
+          svg
+            fill: $ciano
+            width: 30px
+            height: 25px
+        ul
+          position: relative
+          margin-left: 0
+          margin-right: 0
+          display: none
+          +breakpoint(sm)
+            display: flex !important
+          li
+            margin-right: 1rem
+            margin-left: 0 !important
+    .body-carousel
+      padding: 15px 1rem
+      +breakpoint(sm)
+        padding: 30px 80px
+      figure
+        display: flex
+        margin-bottom: 20px
+        +breakpoint(sm)
+          margin-bottom: 35px
+        img
+          width: 100%
+      h2
+        color: $ciano
+        font-weight: 400
+        +font-size(26px)
+        margin-bottom: 20px
+        +breakpoint(sm)
+          margin-bottom: 35px
+          +font-size(38px)
+      p
+        margin-bottom: 10px
+        line-height: 22px
+        +font-size(16px)
+        +breakpoint(sm)
+          +font-size(17px)
+          line-height: 29px
+          margin-bottom: 35px
+    .footer-carousel
+      padding: 0px 15px 50px
+      +breakpoint(sm)
+        padding: 0px 80px 80px
+      p
+        font-weight: 700
+        margin-right: 1rem
+        +font-size(18px)
+        margin-bottom: 10px
+        +breakpoint(sm)
+          margin-bottom: 0
+          +font-size(24px)  

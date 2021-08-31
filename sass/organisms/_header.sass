@@ -1,0 +1,130 @@
+// Header
+body.body-scrolled
+  .site-header
+    background-color: $branco
+    +shadow(0px 0px 4px rgba($cinza, .3))
+    padding: 15px 0
+    border-top: 0
+    +breakpoint(sm)
+      padding: 15px
+    .menu-toggle
+      span
+        background-color: $ciano
+    img
+      +opacity(1)
+.site-header
+  position: fixed
+  +default_transition()
+  top: 0
+  border-top: 4px solid $ciano
+  width: 100%
+  z-index: 600
+  padding: 1rem 0
+  right: 0
+  +breakpoint(sm)
+    padding: 2rem 1rem
+  img
+    +opacity(0)
+    +default_transition()
+  .menu-toggle
+    margin-left: auto
+    margin-right: 0
+    display: block
+    width: 34px
+    span
+      background-color: $branco
+      display: block
+      width: 100%
+      margin-bottom: 6px
+      height: 2px
+      &:last-child
+        margin-bottom: 0
+
+// Menu mobile
+
+body.menu-open
+  main.menu-mobile
+    pointer-events: all
+    .glass, .content
+      +opacity(1)
+      right: 0
+main.menu-mobile,
+main.menu-mobile .glass
+  width: 100vw
+  height: 100vh
+main.menu-mobile
+  overflow: hidden
+  right: 0
+  position: fixed
+  margin: auto
+  left: 0
+  z-index: 700
+  pointer-events: none
+  .glass
+    +opacity(0)
+    z-index: 0
+    position: absolute
+    background-color: rgba(#535353, 0)
+    right: -100vw
+    transition: ease .5s all
+  .content
+    +opacity(0)
+    transition: ease .5s all
+    transition-delay: .2s
+    z-index: 1
+    position: relative
+    margin-left: auto
+    display: block
+    height: 100%
+    background-color: #333333
+    width: 300px
+    right: -300px
+    +breakpoint(sm)
+      width: 385px
+      right: -385px
+    .close-menu
+      text-align: right
+      display: block
+      margin-bottom: 35px
+      padding: 5px 1rem 5px
+      +breakpoint(sm)
+        padding: 15px 25px
+      &:hover
+        text-decoration: none
+        span
+          color: $ciano
+      span
+        +default_transition()
+        font-weight: 100 !important
+        +font-size(55px)
+        color: $branco
+    nav
+      padding: 0 45px
+      +breakpoint(sm)
+        padding: 0 55px
+      ul
+        li
+          margin-bottom: 30px
+          a
+            color: $ciano
+            text-transform: uppercase
+            +font-size(20px)
+            +default_transition()
+            &:hover
+              color: $branco
+              text-decoration: none
+            strong
+              font-weight: normal
+      hr
+        border-top-color: #5c5c5c
+        margin: 35px 0
+      h3
+        text-transform: uppercase
+        color: #999
+        font-family: $font-default
+        margin-bottom: 2rem
+        +font-size(20px)
+      .redes-sociais
+        a
+          &:first-child
+            margin-right: 2rem

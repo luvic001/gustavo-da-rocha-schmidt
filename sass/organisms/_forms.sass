@@ -1,0 +1,59 @@
+form
+  .input-text, .input-select
+    position: relative
+    input, textarea, select
+      background-color: $transparent
+      border: 1px solid $ciano
+      width: 100%
+      padding: 10px 15px
+      +font-size(16px)
+      position: relative
+
+  .input-text
+    input, textarea
+      color: $branco
+      display: block
+  .input-select
+    select
+      +appearance(none)
+      color: #777
+      z-index: 1
+    .select-label
+      position: absolute
+      z-index: 0
+      width: 30px
+      top: 15px
+      right: 0
+      &:after, &:before
+        content: ''
+        width: 1px
+        height: 10px
+        background-color: $ciano
+        position: absolute
+        top: 0px
+      &:before
+        +transform(rotate(-45deg))
+        right: 23px
+      &:after
+        +transform(rotate(45deg))
+        right: 16px
+  .input-submit
+    button, input
+      background-color: $transparent
+      cursor: pointer
+  .wpcf7-response-output.wpcf7-validation-errors
+    display: none
+  span.wpcf7-not-valid-tip
+    margin-top: 7px
+    color: #aaa
+  .wpcf7-response-output.wpcf7-mail-sent-ok
+    width: 100%
+    text-align: center
+    border: 0
+    color: $branco
+    font-weight: 500
+    font-family: $font-default
+    background-color: $ciano
+    font-size: 22px
+    padding: 1rem
+    margin: 1rem 0
